@@ -18,6 +18,16 @@ WorkloadMap = Dict[str, "Workload"]
 # Dynamic Stats directory and file prefix
 DS_DIR = 'stats'
 DS_PREFIX = 'ds'
+PROF_DIR = 'profiles'
+
+
+class Profile:
+    # Main time no-prof
+    # Main time full-prof
+    # Pre-compute Dynamic baseline
+    # Pre-compute Sampling
+    def __init__(self, project_name: str, workload: str) -> None:
+        profile = load.load_object(f'{project_name}_{workload}.pbz2')
 
 
 class Workload:

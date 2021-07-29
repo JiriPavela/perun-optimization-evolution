@@ -22,6 +22,12 @@ BZ2_SUFFIX = '.bz2'
 MAX_LIMIT_INC = 5000
 
 
+# TODO: doc
+def load_json(file_name: str, dir_path: str) -> JsonType:
+    with open(os.path.join(dir_path, file_name), 'r') as json_file:
+        return json.load(json_file)
+
+
 def load_and_deflate(file_name: str, dir_path: str) -> JsonType:
     """ Load and decompress JSON file compressed with bz2.
 

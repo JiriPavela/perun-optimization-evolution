@@ -16,8 +16,8 @@ the main controller process as dictionaries containing only the updated values.
 from __future__ import annotations
 import math
 import copy
-from typing import List, Dict, Sequence, Set, Any, Mapping, Iterable, Tuple, Callable, TypeVar, Union, \
-    Generator, Optional, Protocol, Type
+from typing import List, Dict, Sequence, Set, Any, Mapping, Iterable, Tuple, Callable, TypeVar, \
+    Union, Generator, Optional, Protocol, Type
 
 import pandas as pd
 
@@ -373,7 +373,7 @@ class SolutionSet:
         :param suite: when supplied, the SolutionSet will be constructed such that it covers
                       all of the projects and workloads in the suite. 
         """
-        self.sol_type = solution_type
+        self.sol_type: Type[S] = solution_type
         self.solutions: Dict[str, Dict[str, Solution]] = {}
         # If suite is supplied, initialize the solutions mapping
         if suite is not None:
