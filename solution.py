@@ -342,7 +342,7 @@ class SamplingSolution:
             [
                 [
                     self.project.name, self.workload.name, r.name, r.calls, r.sampled, r.fitness, 
-                    self.project.call_graph.cg[r.name].level
+                    self.project.call_graph.funcs[r.name].level
                 ]
                 for r in self.result.values()
             ],
